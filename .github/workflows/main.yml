@@ -59,7 +59,7 @@ jobs:
     - name: Create ZIP archive
       run: |
         echo "Creating Folder $TITLE"
-        mkdir $TITLE
+        mkdir -p "$TITLE"
         find . -maxdepth 1 -mindepth 1 ! -name ".git" ! -name ".github" -exec cp -r {} "$TITLE"/ \;
         echo "Creating ${{ env.ZIP_FILENAME }}..."
         #zip -r "${{ env.ZIP_FILENAME }}" . -x ".git/*" ".github/*"
